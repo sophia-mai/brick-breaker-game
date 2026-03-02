@@ -1,4 +1,4 @@
-import Block from "./model/block.js";
+import Block from "./block.js";
 
 class Sprite extends Block {
   constructor(x, y, width, height, color, dx, dy) {
