@@ -5,21 +5,15 @@ class Ball extends Sprite {
     super(x, y, width, height, color, dx, dy);
   }
   bounce(canvasWidth, canvasHeight) {
-    if (this.x < 0) {
-      // checking if ball has hit the left edge
-      this.dx *= -1;
-    } else if (this.x + this.width > canvasWidth) {
-      this.dx *= -1;
+    if (this.x < 0 || this.x + this.width > canvasWidth) {
+      // bounce off the left/right edges
+      this.dx *= -1; // switch direction
     }
 
-    if (this.y < 0) {
-      this.dy *= -1;
-    } else if (this.y + this.height > canvasHeight) {
-      this.dy *= -1;
+    if (this.y < 0 || this.y + this.height > canvasHeight) {
+      // bounce off the top/bottom edge
+      this.dy *= -1; // switch direction
     }
-    // checking if the ball has hit the right
-    // check if hit top
-    // check if hit bottom
   }
 }
 
